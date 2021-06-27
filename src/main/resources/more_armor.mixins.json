@@ -5,10 +5,6 @@
   "compatibilityLevel": "JAVA_16",
   "mixins": [
   ],
-  "client": [
-    "PlayerEntityInject",
-    "RecipeManagerMixin"
-  ],
   "injectors": {
     "defaultRequire": 1
   }

@@ -3,7 +3,9 @@ package com.liziyi0914.morearmor.mixin;
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
 import com.liziyi0914.morearmor.armor.BaseArmor;
+import com.liziyi0914.morearmor.data.DataManager;
 import com.mojang.authlib.GameProfile;
+import lombok.Getter;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
@@ -21,7 +23,6 @@ import java.util.UUID;
 
 @Mixin(PlayerEntity.class)
 public abstract class PlayerEntityInject extends LivingEntity {
-    private static final Multimap<UUID, Block> DATA = LinkedHashMultimap.create();
 
     @Shadow
     public abstract void addExperience(int experience);
@@ -35,7 +36,7 @@ public abstract class PlayerEntityInject extends LivingEntity {
 
     @Inject(
             method = "tick",
-            at = @At("HEAD")
+            at = @At("TAIL")//尾部
     )
     private void tick(CallbackInfo ci) {
         Item helmet = this.getEquippedStack(EquipmentSlot.HEAD).getItem();
@@ -46,9 +47,19 @@ public abstract class PlayerEntityInject extends LivingEntity {
         if (helmet instanceof BaseArmor armor) {
             onArmor(armor.getBlock());
         }
+        if (chest instanceof BaseArmor armor) {
+            onArmor(armor.getBlock());
+        }
+        if (leggings instanceof BaseArmor armor) {
+            onArmor(armor.getBlock());
+        }
+        if (boots instanceof BaseArmor armor) {
+            onArmor(armor.getBlock());
+        }
+
     }
 
     private void onArmor(Block block) {
-        DATA.put(getUuid(), block);
+        DataManager.put(getUuid(), block);
     }
 }

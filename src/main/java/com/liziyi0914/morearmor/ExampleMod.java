@@ -41,4 +41,7 @@ public class ExampleMod implements ModInitializer {
         }
     }
 
+    public static boolean isInvalid(Block block) {
+        return block == Blocks.AIR || block == Blocks.BEDROCK;
+    }
 }

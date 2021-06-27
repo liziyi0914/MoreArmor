@@ -18,7 +18,7 @@ import java.util.List;
 
 public class BaseArmor extends ArmorItem {
     @Getter
-    private Block block;
+    private final Block block;
     public BaseArmor(Block block,ArmorMaterial material, EquipmentSlot slot) {
         super(material, slot, new Item.Settings().group(ExampleMod.FABRIC_EXAMPLE_GROUP));
         this.block=block;

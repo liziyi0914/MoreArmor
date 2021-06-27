@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class EffectManager {
 
-    private static Map<LivingEntity, Map<Class<? extends AbstractEffect>, AbstractEffect>> map = new HashMap<>();
+    public static final Map<LivingEntity, Map<Class<? extends AbstractEffect>, AbstractEffect>> map = new HashMap<>();
 
     public static void refreshEffect(LivingEntity entity, Collection<Class<? extends AbstractEffect>> classes) {
         if (!map.containsKey(entity)) {
