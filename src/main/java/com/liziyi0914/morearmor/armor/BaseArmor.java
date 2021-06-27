@@ -34,11 +34,11 @@ public class BaseArmor extends ArmorItem {
 
     @Override
     public String getTranslationKey() {
-        final String key = String.format("item.more_armor.%s_%s", Registry.BLOCK.getId(block).getPath(), getSlotType().getName());
+        final String key = String.format("item.more_armor.%s_%s", Registry.BLOCK.getId(block).getPath(), getSlotName(getSlotType()));
         if (I18n.hasTranslation(key)) {
             return key;
         }
-        return "item.more_armor.base_" + getSlotType().getName();
+        return "item.more_armor.base_" + getSlotName(getSlotType());
     }
 
     @Override
@@ -49,5 +49,22 @@ public class BaseArmor extends ArmorItem {
     @Override
     public Text getName(ItemStack stack) {
         return new TranslatableText(getTranslationKey(stack), block.getName().getString());
+    }
+    private static String getSlotName(EquipmentSlot slot){
+        switch (slot) {
+            case FEET -> {
+                return "boots";
+            }
+            case HEAD -> {
+                return "helmet";
+            }
+            case LEGS -> {
+                return "leggings";
+            }
+            case CHEST -> {
+                return "chestplate";
+            }
+        }
+        return slot.getName();
     }
 }

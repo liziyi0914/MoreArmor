@@ -1,7 +1,7 @@
 {
   "itemGroup.more_armor.tab": "更多盔甲",
-  "item.more_armor.base_head": "%s 头盔",
-  "item.more_armor.base_chest": "%s 胸甲",
-  "item.more_armor.base_legs": "%s 护腿",
-  "item.more_armor.base_feet": "%s 靴子"
+  "item.more_armor.base_helmet": "%s 头盔",
+  "item.more_armor.base_chestplate": "%s 胸甲",
+  "item.more_armor.base_leggings": "%s 护腿",
+  "item.more_armor.base_boots": "%s 靴子"
 }

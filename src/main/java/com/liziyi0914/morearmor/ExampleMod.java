@@ -31,10 +31,10 @@ public class ExampleMod implements ModInitializer {
                     if(isInvalid(block))continue;
                     String name = Registry.BLOCK.getId(block).getPath();
                     ArmorMaterial material = new BaseArmorMaterial(name);
-                    Registry.register(Registry.ITEM, new Identifier(MODID, name + "_head"), new BaseArmor(block, material, EquipmentSlot.HEAD));
-                    Registry.register(Registry.ITEM, new Identifier(MODID, name + "_chest"), new BaseArmor(block, material, EquipmentSlot.CHEST));
-                    Registry.register(Registry.ITEM, new Identifier(MODID, name + "_legs"), new BaseArmor(block, material, EquipmentSlot.LEGS));
-                    Registry.register(Registry.ITEM, new Identifier(MODID, name + "_feet"), new BaseArmor(block, material, EquipmentSlot.FEET));
+                    Registry.register(Registry.ITEM, new Identifier(MODID, name + "_helmet"), new BaseArmor(block, material, EquipmentSlot.HEAD));
+                    Registry.register(Registry.ITEM, new Identifier(MODID, name + "_chestplate"), new BaseArmor(block, material, EquipmentSlot.CHEST));
+                    Registry.register(Registry.ITEM, new Identifier(MODID, name + "_leggings"), new BaseArmor(block, material, EquipmentSlot.LEGS));
+                    Registry.register(Registry.ITEM, new Identifier(MODID, name + "_boots"), new BaseArmor(block, material, EquipmentSlot.FEET));
                 }
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
