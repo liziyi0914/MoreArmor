@@ -16,7 +16,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.liziyi0914.morearmor.ExampleMod"
+      "com.liziyi0914.morearmor.MoreArmorMod"
     ]
   },
   "mixins": [

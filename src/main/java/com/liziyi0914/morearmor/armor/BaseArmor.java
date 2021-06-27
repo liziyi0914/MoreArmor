@@ -1,6 +1,6 @@
 package com.liziyi0914.morearmor.armor;
 
-import com.liziyi0914.morearmor.ExampleMod;
+import com.liziyi0914.morearmor.MoreArmorMod;
 import lombok.Getter;
 import net.minecraft.block.Block;
 import net.minecraft.client.item.TooltipContext;
@@ -23,7 +23,7 @@ public class BaseArmor extends ArmorItem {
     private final Block block;
 
     public BaseArmor(Block block, ArmorMaterial material, EquipmentSlot slot) {
-        super(material, slot, new Item.Settings().group(ExampleMod.GROUP));
+        super(material, slot, new Item.Settings().group(MoreArmorMod.GROUP));
         this.block = block;
     }
 

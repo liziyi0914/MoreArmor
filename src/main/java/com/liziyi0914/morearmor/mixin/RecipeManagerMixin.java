@@ -1,7 +1,7 @@
 package com.liziyi0914.morearmor.mixin;
 
 import com.google.gson.JsonElement;
-import com.liziyi0914.morearmor.ExampleMod;
+import com.liziyi0914.morearmor.MoreArmorMod;
 import com.liziyi0914.morearmor.Utils;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -28,11 +28,12 @@ public class RecipeManagerMixin {
             try {
                 Object obj = field.get(null);
                 if (obj instanceof Block block) {
+                    if(MoreArmorMod.isInvalid(block))continue;
                     String name = Registry.BLOCK.getId(block).getPath();
-                    map.put(new Identifier(ExampleMod.MODID, name + "_helmet"), Utils.autoRecipe(Utils.ARMOR_TYPE_HELMET, block));
-                    map.put(new Identifier(ExampleMod.MODID, name + "_chestplate"), Utils.autoRecipe(Utils.ARMOR_TYPE_CHESTPLATE, block));
-                    map.put(new Identifier(ExampleMod.MODID, name + "_leggings"), Utils.autoRecipe(Utils.ARMOR_TYPE_LEGGINGS,block));
-                    map.put(new Identifier(ExampleMod.MODID, name + "_boots"), Utils.autoRecipe(Utils.ARMOR_TYPE_BOOTS, block));
+                    map.put(new Identifier(MoreArmorMod.MODID, name + "_helmet"), Utils.autoRecipe(Utils.ARMOR_TYPE_HELMET, block));
+                    map.put(new Identifier(MoreArmorMod.MODID, name + "_chestplate"), Utils.autoRecipe(Utils.ARMOR_TYPE_CHESTPLATE, block));
+                    map.put(new Identifier(MoreArmorMod.MODID, name + "_leggings"), Utils.autoRecipe(Utils.ARMOR_TYPE_LEGGINGS,block));
+                    map.put(new Identifier(MoreArmorMod.MODID, name + "_boots"), Utils.autoRecipe(Utils.ARMOR_TYPE_BOOTS, block));
                 }
             } catch (IllegalAccessException e) {
                 e.printStackTrace();

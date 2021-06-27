@@ -5,7 +5,6 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import net.minecraft.block.Block;
-import net.minecraft.item.Items;
 import net.minecraft.util.registry.Registry;
 
 public class Utils {
@@ -48,7 +47,7 @@ public class Utils {
         json.add("key", keyList);
 
         JsonObject result = new JsonObject();
-        result.addProperty("item", ExampleMod.MODID + ":" + id + "_" + ARMOR_NAME[type]);
+        result.addProperty("item", MoreArmorMod.MODID + ":" + id + "_" + ARMOR_NAME[type]);
         result.addProperty("count", 1);
         json.add("result", result);
         //This creates:

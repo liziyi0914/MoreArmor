@@ -15,7 +15,7 @@ import net.minecraft.util.registry.Registry;
 
 import java.lang.reflect.Field;
 
-public class ExampleMod implements ModInitializer {
+public class MoreArmorMod implements ModInitializer {
 
     public static final String MODID = "more_armor";
 
