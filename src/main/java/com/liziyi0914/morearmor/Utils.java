@@ -4,6 +4,9 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import net.minecraft.block.Block;
+import net.minecraft.item.Items;
+import net.minecraft.util.registry.Registry;
 
 public class Utils {
 
@@ -27,7 +30,8 @@ public class Utils {
 
     private static final Gson gson = new Gson();
 
-    public static JsonElement autoRecipe(int type, String id) {
+    public static JsonElement autoRecipe(int type, Block block) {
+        String id= Registry.ITEM.getId(block.asItem()).getPath();
         JsonObject json = new JsonObject();
         json.addProperty("type", "minecraft:crafting_shaped");
 

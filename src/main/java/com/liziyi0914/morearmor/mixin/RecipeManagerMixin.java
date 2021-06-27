@@ -29,10 +29,10 @@ public class RecipeManagerMixin {
                 Object obj = field.get(null);
                 if (obj instanceof Block block) {
                     String name = Registry.BLOCK.getId(block).getPath();
-                    map.put(new Identifier(ExampleMod.MODID, name + "_helmet"), Utils.autoRecipe(Utils.ARMOR_TYPE_HELMET, name));
-                    map.put(new Identifier(ExampleMod.MODID, name + "_chestplate"), Utils.autoRecipe(Utils.ARMOR_TYPE_CHESTPLATE, name));
-                    map.put(new Identifier(ExampleMod.MODID, name + "_leggings"), Utils.autoRecipe(Utils.ARMOR_TYPE_LEGGINGS, name));
-                    map.put(new Identifier(ExampleMod.MODID, name + "_boots"), Utils.autoRecipe(Utils.ARMOR_TYPE_BOOTS, name));
+                    map.put(new Identifier(ExampleMod.MODID, name + "_helmet"), Utils.autoRecipe(Utils.ARMOR_TYPE_HELMET, block));
+                    map.put(new Identifier(ExampleMod.MODID, name + "_chestplate"), Utils.autoRecipe(Utils.ARMOR_TYPE_CHESTPLATE, block));
+                    map.put(new Identifier(ExampleMod.MODID, name + "_leggings"), Utils.autoRecipe(Utils.ARMOR_TYPE_LEGGINGS,block));
+                    map.put(new Identifier(ExampleMod.MODID, name + "_boots"), Utils.autoRecipe(Utils.ARMOR_TYPE_BOOTS, block));
                 }
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
