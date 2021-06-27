@@ -28,6 +28,7 @@ public class ExampleMod implements ModInitializer {
             try {
                 Object obj = field.get(null);
                 if (obj instanceof Block block) {
+                    if(isInvalid(block))continue;
                     String name = Registry.BLOCK.getId(block).getPath();
                     ArmorMaterial material = new BaseArmorMaterial(name);
                     Registry.register(Registry.ITEM, new Identifier(MODID, name + "_helmet"), new BaseArmor(block, material, EquipmentSlot.HEAD));
